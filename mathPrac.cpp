@@ -75,8 +75,7 @@ int main(){
             
         }
         else {
-           cout << "Please enter a valid option: ";
-           continue;
+           cout << "Please enter a valid option. " << endl;
         }
     }
 
