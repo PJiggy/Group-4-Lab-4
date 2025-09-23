@@ -88,11 +88,32 @@ int main(){
             
         }
 
-        //Division
-        else if (choice == 4){
-            
-            
-        }
+        // Division
+        else if (choice == 4) {
+    
+    int a = rand() % 10 + 1; 
+    int b = rand() % 10 + 1; 
+    int answer = a / b; 
+
+    int userAnswer;
+
+    cout << "What is " << a << " / " << b << "?\n" << endl;
+    cout << "Enter your answer: " << endl;
+    cin >> userAnswer;
+
+    if (userAnswer == answer) {
+        correct++;
+        cout << "Correct!" << endl;
+    } else {
+        wrong++;
+        cout << "Incorrect!" << endl;
+        cout << "Your answer: " << userAnswer << endl;
+        cout << "Correct answer: " << answer << endl;
+        cout << endl << endl;
+    }
+    continue;
+}
+
         
         //Statistics
         else if (choice == 5){
