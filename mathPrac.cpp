@@ -48,7 +48,7 @@ int main(){
             int answer;
             cout << "What is " << minuend << " - " << subtrahend << "?" << endl;
             cin >> answer;
-            if(answer == (minuend - subtrahend)){
+            if(answer == minuend - subtrahend){
                 cout << "Correct!" << endl;
                 correct++; 
             }
