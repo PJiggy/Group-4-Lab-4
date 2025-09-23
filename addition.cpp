@@ -34,7 +34,7 @@ int main() {
             cout << "Correct" << endl;
             correctAnswers++;
         } else {
-            cout << "The correct answer is " << (num1 + num2) << "." << endl;
+            cout << "Sorry, the correct answer is " << (num1 + num2) << "." << endl;
             wrongAnswers++;
         }
     }
@@ -55,7 +55,7 @@ int main() {
         outFile.close();
         cout << "\nYour results have been saved to 'results.txt'.\n";
     } else {
-        cout << "Unable to open file for writing results." << endl;
+        cout << "Unable to open file" << endl;
     }
 
     return 0;
