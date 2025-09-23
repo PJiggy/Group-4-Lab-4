@@ -25,7 +25,7 @@ int main(){
     while (true){ // will break within loop depending on user choice
         
         cout << "Menu Options" << endl << "------------"<<endl;
-        cout << "1. Addition" << endl << "2. Subtraction" << "3. Multiplication" << endl << "4. Division" << endl << "5. Statistics" << endl << "-999. Exit" << endl;
+        cout << "1. Addition" << endl << "2. Subtraction" << "\n3. Multiplication" << endl << "4. Division" << endl << "5. Statistics" << endl << "-999. Exit" << endl;
         cout << "Enter a number to select an option: ";
         cin >> choice;
 
@@ -47,12 +47,14 @@ int main(){
             int answer;
             cout << "What is " << minuend << " - " << subtrahend << "?" << endl;
             cin >> answer;
-            if(answer = minuend - subtrahend){
+            if(answer == (minuend - subtrahend)){
                 cout << "Correct!" << endl;
                 correct++; 
             }
             else{
                 cout << "Oh no..... wrong!" << endl;
+                cout << "The correct answer was: " << (minuend - subtrahend) << endl;
+
                 wrong++; 
             }
         }
