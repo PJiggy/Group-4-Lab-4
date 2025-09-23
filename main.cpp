@@ -64,31 +64,5 @@ int main(){
         }
     }
 
-
-
-    // generates the desired math problem
-    bool 
-        
-        
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return 0;
 }

@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/tysonlam/Documents/GitHub/Group-4-Lab-4",
+      "program": "/Users/tysonlam/Documents/GitHub/Group-4-Lab-4/build/Debug/outDebug"
+    }
+  ]
+}
