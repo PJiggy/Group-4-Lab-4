@@ -20,9 +20,8 @@ int main(){
     // displays menu and prompts user for math problem
     while (true){ // will break within loop depending on user choice
         
-        cout << " --------------" << endl;
-        cout << "| Menu Options |" << endl << " --------------"<<endl;
-        cout << "1) Addition" << endl << "2) Subtraction" << endl << "3) Multiplication" << endl << "4) Division" << endl << "5) Statistics" << endl << "Q) Exit\n" << endl;
+        cout << "Menu Options" << endl << "------------"<<endl;
+        cout << "1. Addition" << endl << "2. Subtraction" << "\n3. Multiplication" << endl << "4. Division" << endl << "5. Statistics" << endl << "-999. Exit" << endl;
         cout << "Enter a number to select an option: ";
         cin >> choice;
 
@@ -39,8 +38,21 @@ int main(){
 
         //Subtraction
         else if (choice == 2){
+            int minuend = distr(gen); // random number for minuend
+            int subtrahend = distr(gen); // random for subtrahend
+            int answer;
+            cout << "What is " << minuend << " - " << subtrahend << "?" << endl;
+            cin >> answer;
+            if(answer == (minuend - subtrahend)){
+                cout << "Correct!" << endl;
+                correct++; 
+            }
+            else{
+                cout << "Oh no..... wrong!" << endl;
+                cout << "The correct answer was: " << (minuend - subtrahend) << endl;
 
-            
+                wrong++; 
+            }
         }
 
         //Multiplication
