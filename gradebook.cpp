@@ -13,12 +13,8 @@ int main(){
 
     ifstream file(filename); // open the file
     if(!file.is_open()){
-        cerr << "Error: Could not open file!"; << endl;
+        cerr << "Error: Could not open file!" << endl;
         return 1;
     }
-  
-
-
-
-
+    return 0;
 }

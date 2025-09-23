@@ -4,6 +4,10 @@
 #include <random>
 #include <fstream>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> multiplication
 using namespace std;
 
 int main(){
@@ -12,6 +16,7 @@ int main(){
     
     // keeps track of the choice for the user
     int choice;
+<<<<<<< HEAD
     ofstream outputFile("results.txt");
     
     // random
@@ -20,12 +25,23 @@ int main(){
     uniform_int_distribution<> distr(1,500); // sets range
 
     // use in form "int rand = distr(gen);"
+=======
+    ofstream outfile("results.txt");
+    
+    
+>>>>>>> multiplication
 
     // displays menu and prompts user for math problem
     while (true){ // will break within loop depending on user choice
         
+<<<<<<< HEAD
         cout << "Menu Options" << endl << "------------"<<endl;
         cout << "1. Addition" << endl << "2. Subtraction" << "3. Multiplication" << endl << "4. Division" << endl << "5. Statistics" << endl << "-999. Exit" << endl;
+=======
+        cout << " --------------" << endl;
+        cout << "| Menu Options |" << endl << " --------------"<<endl;
+        cout << "1) Addition" << endl << "2) Subtraction" << endl << "3) Multiplication" << endl << "4) Division" << endl << "5) Statistics" << endl << "Q) Exit\n" << endl;
+>>>>>>> multiplication
         cout << "Enter a number to select an option: ";
         cin >> choice;
 
@@ -40,6 +56,7 @@ int main(){
             
         }
 
+<<<<<<< HEAD
         //Subtraction, Paul
         else if (choice == 2){
             int minuend = distr(gen); // random number for minuend
@@ -55,12 +72,44 @@ int main(){
                 cout << "Oh no..... wrong!" << endl;
                 wrong++; 
             }
+=======
+        //Subtraction
+        else if (choice == 2){
+
+            
+>>>>>>> multiplication
         }
 
         //Multiplication
         else if (choice == 3){
+<<<<<<< HEAD
 
             
+=======
+            //Generate two numbers
+            int a = rand() % 10 + 1;
+            int b = rand() % 10 + 1;
+            int answer = a * b;
+            int userAnswer;
+
+            cout << "What is " << a << " * " << b << "?\n"<< endl;
+            cout << "Enter your answer: " << endl;
+            cin >> userAnswer;
+
+            if (userAnswer == answer){
+                correct++;
+                cout << "Correct!" << endl;
+
+            }
+            else{
+                wrong++;
+                cout << "Incorrect!" << endl;
+                cout << "Your answer: " << userAnswer << endl;
+                cout << "Correct answer: " << answer << endl;
+                cout << endl << endl;
+            }
+            continue;
+>>>>>>> multiplication
         }
 
         //Division
@@ -75,6 +124,7 @@ int main(){
             
         }
         else {
+<<<<<<< HEAD
            cout << "Please enter a valid option. " << endl;
         }
     }
@@ -82,6 +132,18 @@ int main(){
 
 
 
+=======
+           cout << "Please enter a valid option: ";
+           continue;
+        }
+    }
+
+  
+
+    // generates the desired math problem
+    bool problem;
+        
+>>>>>>> multiplication
         
 
 
