@@ -1,62 +1,73 @@
 #include <iostream>
-#include <cstdlib> 
-#include <ctime>
+#include <fstream>
 #include <iomanip>
+#include <random>
+#include <limits>
 
 using namespace std;
 
-int main() {
-    srand(static_cast<unsigned int>(time(0)));
-
-    int correctAnswers = 0;
-    int wrongAnswers = 0;
+void additionPractice() {
+    int correct = 0;
+    int incorrect = 0;
     int userAnswer;
-    int num1, num2;
+    const int sentinel = -999;
 
-    cout << "Math Practice - Addition Mode" << endl;
-    cout << "Enter -999 to exit and return to the menu." << endl;
+    // Random number
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dist(0, 20); // Numbers between 0 and 20
+
+    cout << "\n--- Addition Practice ---\n";
+    cout << "Enter -999 to return to the main menu.\n";
 
     while (true) {
-        // Generate two random numbers
-        num1 = rand() % 10 + 1;
-        num2 = rand() % 10 + 1;
+        int a = dist(gen);
+        int b = dist(gen);
+        int correctAnswer = a + b;
 
-        cout << "What is " << num1 << " + " << num2 << "? ";
+        cout << "What is " << a << " + " << b << "? ";
         cin >> userAnswer;
 
-        // User exit
-        if (userAnswer == -999) {
+        if (cin.fail()) {
+            cin.clear(); // clear error flags
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // discard invalid input
+            cout << "Invalid input. Please enter a number or -999 to quit.\n";
+            continue;
+        }
+
+        if (userAnswer == sentinel) {
             break;
         }
 
-        //Answer check
-        if (userAnswer == (num1 + num2)) {
-            cout << "Correct" << endl;
-            correctAnswers++;
+        if (userAnswer == correctAnswer) {
+            cout << "✅ Correct!\n";
+            ++correct;
         } else {
-            cout << "Sorry, the correct answer is " << (num1 + num2) << "." << endl;
-            wrongAnswers++;
+            cout << "❌ Sorry, the right answer is " << correctAnswer << ".\n";
+            ++incorrect;
         }
     }
 
-    //summary of performance
-    cout << "\nSummary of Your Performance:" << endl;
-    cout << setw(20) << left << "Correct Answers: " << correctAnswers << endl;
-    cout << setw(20) << left << "Wrong Answers: " << wrongAnswers << endl;
-    cout << setw(20) << left << "Total Questions: " << (correctAnswers + wrongAnswers) << endl;
+    // Display summary
+    cout << "\n--- Session Summary ---\n";
+    cout << setw(15) << left << "Correct Answers:" << correct << "\n";
+    cout << setw(15) << left << "Wrong Answers:" << incorrect << "\n";
 
-    // Save results
-    ofstream outFile("results.txt");
+    // Save to file
+    ofstream outFile("results.txt", ios::app);
     if (outFile.is_open()) {
-        outFile << "Math Practice - Addition Mode Results\n";
-        outFile << "Correct Answers: " << correctAnswers << endl;
-        outFile << "Wrong Answers: " << wrongAnswers << endl;
-        outFile << "Total Questions: " << (correctAnswers + wrongAnswers) << endl;
+        outFile << "Addition Practice Session:\n";
+        outFile << setw(15) << left << "Correct Answers:" << correct << "\n";
+        outFile << setw(15) << left << "Wrong Answers:" << incorrect << "\n";
+        outFile << "--------------------------\n";
         outFile.close();
-        cout << "\nYour results have been saved to 'results.txt'.\n";
+        cout << "Results saved to results.txt\n";
     } else {
-        cout << "Unable to open file" << endl;
+        cerr << "Unable to open results.txt for writing.\n";
     }
+}
 
+int main() {
+    additionPractice();
     return 0;
 }
