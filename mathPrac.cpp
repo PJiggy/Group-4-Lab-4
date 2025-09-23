@@ -4,10 +4,7 @@
 #include <random>
 #include <fstream>
 
-<<<<<<< HEAD
-=======
 
->>>>>>> multiplication
 using namespace std;
 
 int main(){
@@ -16,32 +13,16 @@ int main(){
     
     // keeps track of the choice for the user
     int choice;
-<<<<<<< HEAD
-    ofstream outputFile("results.txt");
-    
-    // random
-    random_device rd ; // generates seed
-    mt19937 gen(rd()); // Mersenne Twister Engine
-    uniform_int_distribution<> distr(1,500); // sets range
-
-    // use in form "int rand = distr(gen);"
-=======
     ofstream outfile("results.txt");
     
     
->>>>>>> multiplication
 
     // displays menu and prompts user for math problem
     while (true){ // will break within loop depending on user choice
         
-<<<<<<< HEAD
-        cout << "Menu Options" << endl << "------------"<<endl;
-        cout << "1. Addition" << endl << "2. Subtraction" << "3. Multiplication" << endl << "4. Division" << endl << "5. Statistics" << endl << "-999. Exit" << endl;
-=======
         cout << " --------------" << endl;
         cout << "| Menu Options |" << endl << " --------------"<<endl;
-        cout << "1) Addition" << endl << "2) Subtraction" << endl << "3) Multiplication" << endl << "4) Division" << endl << "5) Statistics" << endl << "Q) Exit\n" << endl;
->>>>>>> multiplication
+        cout << "1) Addition" << endl << "2) Subtraction" << endl << "3) Multiplication" << endl << "4) Division" << endl << "5) Statistics" << endl << "-999) Exit\n" << endl;
         cout << "Enter a number to select an option: ";
         cin >> choice;
 
@@ -56,36 +37,14 @@ int main(){
             
         }
 
-<<<<<<< HEAD
-        //Subtraction, Paul
-        else if (choice == 2){
-            int minuend = distr(gen); // random number for minuend
-            int subtrahend = distr(gen); // random for subtrahend
-            int answer;
-            cout << "What is " << minuend << " - " << subtrahend << "?" << endl;
-            cin >> answer;
-            if(answer = minuend - subtrahend){
-                cout << "Correct!" << endl;
-                correct++; 
-            }
-            else{
-                cout << "Oh no..... wrong!" << endl;
-                wrong++; 
-            }
-=======
         //Subtraction
         else if (choice == 2){
 
             
->>>>>>> multiplication
         }
 
         //Multiplication
         else if (choice == 3){
-<<<<<<< HEAD
-
-            
-=======
             //Generate two numbers
             int a = rand() % 10 + 1;
             int b = rand() % 10 + 1;
@@ -109,7 +68,6 @@ int main(){
                 cout << endl << endl;
             }
             continue;
->>>>>>> multiplication
         }
 
         //Division
@@ -124,15 +82,6 @@ int main(){
             
         }
         else {
-<<<<<<< HEAD
-           cout << "Please enter a valid option. " << endl;
-        }
-    }
-
-
-
-
-=======
            cout << "Please enter a valid option: ";
            continue;
         }
@@ -143,7 +92,6 @@ int main(){
     // generates the desired math problem
     bool problem;
         
->>>>>>> multiplication
         
 
 

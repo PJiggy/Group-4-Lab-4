@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <fstream> // for files
 #include <string>
@@ -16,5 +17,7 @@ int main(){
         cerr << "Error: Could not open file!" << endl;
         return 1;
     }
-    return 0;
+  
+
+
 }
