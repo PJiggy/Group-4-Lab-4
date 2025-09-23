@@ -14,7 +14,12 @@ int main(){
     int choice;
     ofstream outputFile("results.txt");
     
-    
+    // random
+    random_device rd ; // generates seed
+    mt19937 gen(rd()); // Mersenne Twister Engine
+    uniform_int_distribution<> distr(1,500); // sets range
+
+    // use in form "int rand = distr(gen);"
 
     // displays menu and prompts user for math problem
     while (true){ // will break within loop depending on user choice
@@ -35,10 +40,21 @@ int main(){
             
         }
 
-        //Subtraction
+        //Subtraction, Paul
         else if (choice == 2){
-
-            
+            int minuend = distr(gen); // random number for minuend
+            int subtrahend = distr(gen); // random for subtrahend
+            int answer;
+            cout << "What is " << minuend << " - " << subtrahend << "?" << endl;
+            cin >> answer;
+            if(answer = minuend - subtrahend){
+                cout << "Correct!" << endl;
+                correct++; 
+            }
+            else{
+                cout << "Oh no..... wrong!" << endl;
+                wrong++; 
+            }
         }
 
         //Multiplication
@@ -59,16 +75,13 @@ int main(){
             
         }
         else {
-           cout << "Please enter a valid option: ";
-           continue;
+           cout << "Please enter a valid option. " << endl;
         }
     }
 
 
 
-    // generates the desired math problem
-    bool 
-        
+
         
 
 

@@ -1,4 +1,19 @@
 # Group-4-Lab-4
+Problem 1: Gradebook Reporter
+
+Create a program that reads student names and their test scores from a file and prints a grade report.
+Tasks:
+1. Read the student’s full name using getline.
+2. Then read their test scores until you find a -1 (sentinel).
+3. Calculate the average of the scores using type casting if needed.
+4. Use a switch statement to decide the letter grade (A, B, C, D, or F).
+5. Use the ?: operator to show PASS if average >= 60, otherwise FAIL.
+6. Format the output as a table using setw.
+7. Ask the user (with cin.get) if they want to save the table to a file.
+8. (Optional) Let the user search for a student by name and show only that record
+
+
+Problem 2:
 Math Practice Suite With Github
 Program requirements:
 1. Show a menu with options for Addition, Subtraction, Multiplication, Division, and
