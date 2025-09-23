@@ -40,10 +40,10 @@ void additionPractice() {
         }
 
         if (userAnswer == correctAnswer) {
-            cout << "✅ Correct!\n";
+            cout << "Correct!\n";
             ++correct;
         } else {
-            cout << "❌ Sorry, the right answer is " << correctAnswer << ".\n";
+            cout << "Sorry, the right answer is " << correctAnswer << ".\n";
             ++incorrect;
         }
     }
