@@ -2,79 +2,131 @@
 #include <fstream> // for files
 #include <iomanip> // for setw
 #include <string>
-using namespace std; 
+#include <random>
+#include <fstream>
+
+using namespace std;
 
 int main(){
-    // variables
-    int total,testNum;
-    double average;
-    char grade; 
-
-   // must read in a file 
-   string filename; 
-   cout << "Enter filename: "; 
-   cin >> filename;
-
-   string line;
-
-   // open the file
-    ifstream file(filename); 
-    if(!file.is_open()){
-        cerr << "Error: Could not open file!" << endl; // error message
-        return 1;
-    }
-
-
-    // read their fullname from the file
-
-    string line;
-    string student;
+    // must keep track of right and wrong answers
+    int correct = 0, wrong = 0;
     
-    getline(file,line); // read first line since student name is first
-    student = line; // student is set to this line
+    // keeps track of the choice for the user
+    int choice;
+    ofstream outputFile("results.txt");
+    
+    // random
+    random_device rd ; // generates seed
+    mt19937 gen(rd()); // Mersenne Twister Engine
+    uniform_int_distribution<> distr(1,500); // sets range
 
-    // now we loop through the text scores until we reach -1
-    while(getline(file, line)){ // read each line until end
-        if(stoi(line) == -1){ // exit if we reach sentinel value
+    // use in form "int rand = distr(gen);"
+
+    // displays menu and prompts user for math problem
+    while (true){ // will break within loop depending on user choice
+        
+        cout << "Menu Options" << endl << "------------"<<endl;
+        cout << "1. Addition" << endl << "2. Subtraction" << "\n3. Multiplication" << endl << "4. Division" << endl << "5. Statistics" << endl << "-999. Exit" << endl;
+        cout << "Enter a number to select an option: ";
+        cin >> choice;
+
+        //Exit Condition
+        if (choice ==  -999) {
             break;
         }
-        total += stoi(line); // add the score to the total
-        testNum++; // increment number of tests
+
+        //Addition
+        else if (choice == 1){
+
+            
+        }
+
+        //Subtraction, Paul
+        else if (choice == 2){
+            int minuend = distr(gen); // random number for minuend
+            int subtrahend = distr(gen); // random for subtrahend
+            int answer;
+            cout << "What is " << minuend << " - " << subtrahend << "?" << endl;
+            cin >> answer;
+            if(answer == (minuend - subtrahend)){
+                cout << "Correct!" << endl;
+                correct++; 
+            }
+            else{
+                cout << "Oh no..... wrong!" << endl;
+                cout << "The correct answer was: " << (minuend - subtrahend) << endl;
+
+                wrong++; 
+            }
+        }
+
+        //Multiplication
+        else if (choice == 3){
+            //Generate two numbers
+            int a = rand() % 10 + 1;
+            int b = rand() % 10 + 1;
+            int answer = a * b;
+            int userAnswer;
+
+            cout << "What is " << a << " * " << b << "?\n"<< endl;
+            cout << "Enter your answer: " << endl;
+            cin >> userAnswer;
+
+            if (userAnswer == answer){
+                correct++;
+                cout << "Correct!" << endl;
+
+            }
+            else{
+                wrong++;
+                cout << "Incorrect!" << endl;
+                cout << "Your answer: " << userAnswer << endl;
+                cout << "Correct answer: " << answer << endl;
+                cout << endl << endl;
+            }
+            continue;
+            
+        }
+
+        //Division
+        else if (choice == 4){
+            
+            
+        }
+        
+        //Statistics
+        else if (choice == 5){
+
+            
+        }
+        else {
+           cout << "Please enter a valid option. " << endl;
+        }
     }
 
-    // at this point should have all scores loaded up
-    average = total / testNum; // average: total score / # of tests
 
-    switch(grade){
-        case 1:
-            if(average < 60){
-                grade = 'F';
-            }
-        case 2:
-            if(60 < average < 70){
-                grade = 'D';
-            }
-        case 3:
-            if(70 < average < 80){
-                grade = 'C';
-            } 
-        case 4:
-            if(80 < average < 90){
-                grade = 'B';
-            }  
-        case 5:
-            if(90 < average < 100){
-                grade = 'A';
-            }
-        default:
-            cout << "Something went wrong. No scores read.";     
-    } 
-    
-    
-    // setup table, use table default box size of 25
-    cout << "__________________________________________________" << endl; // top of box, 50 underscores;
-    cout << setw(50) << "| Student name " << "| Grade |"; // label
-    cout << setw(50) << "| " << student << "| " << grade << " |"; // filled in info
+
+
+        
+
+
+
+
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
 }
