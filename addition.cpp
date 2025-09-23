@@ -1,12 +1,12 @@
 #include <iostream>
-#include <cstdlib> // for rand() and srand()
-#include <ctime>   // for time()
-#include <iomanip> // for setw()
+#include <cstdlib> 
+#include <ctime>
+#include <iomanip>
 
 using namespace std;
 
 int main() {
-    srand(static_cast<unsigned int>(time(0))); // Initialize random seed
+    srand(static_cast<unsigned int>(time(0)));
 
     int correctAnswers = 0;
     int wrongAnswers = 0;
