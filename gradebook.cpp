@@ -11,13 +11,15 @@ int main(){
 
    string line;
 
-    ifstream file(filename); // open the file
+   // open the file
+    ifstream file(filename); 
     if(!file.is_open()){
-        cerr << "Error: Could not open file!"; << endl;
+        cerr << "Error: Could not open file!"; << endl; // error message
         return 1;
     }
   
 
+    
 
 
 
