@@ -1,0 +1,7 @@
+===== Statistics Summary =====
+Total Questions: 11
+Correct Answers: 8
+Wrong Answers: 3
+Accuracy: 72.73%
+==============================
+
