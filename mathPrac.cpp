@@ -25,7 +25,7 @@ int main(){
     while (true){ // will break within loop depending on user choice
         
         cout << "Menu Options" << endl << "------------"<<endl;
-        cout << "1. Addition" << endl << "2. Subtraction" << "3. Multiplication" << endl << "4. Division" << endl << "5. Statistics" << endl << "-999. Exit" << endl;
+        cout << "1. Addition" << endl << "2. Subtraction" << "\n3. Multiplication" << endl << "4. Division" << endl << "5. Statistics" << endl << "-999. Exit" << endl;
         cout << "Enter a number to select an option: ";
         cin >> choice;
 
@@ -47,19 +47,43 @@ int main(){
             int answer;
             cout << "What is " << minuend << " - " << subtrahend << "?" << endl;
             cin >> answer;
-            if(answer == minuend - subtrahend){
+            if(answer == (minuend - subtrahend)){
                 cout << "Correct!" << endl;
                 correct++; 
             }
             else{
                 cout << "Oh no..... wrong!" << endl;
+                cout << "The correct answer was: " << (minuend - subtrahend) << endl;
+
                 wrong++; 
             }
         }
 
         //Multiplication
         else if (choice == 3){
+            //Generate two numbers
+            int a = rand() % 10 + 1;
+            int b = rand() % 10 + 1;
+            int answer = a * b;
+            int userAnswer;
 
+            cout << "What is " << a << " * " << b << "?\n"<< endl;
+            cout << "Enter your answer: " << endl;
+            cin >> userAnswer;
+
+            if (userAnswer == answer){
+                correct++;
+                cout << "Correct!" << endl;
+
+            }
+            else{
+                wrong++;
+                cout << "Incorrect!" << endl;
+                cout << "Your answer: " << userAnswer << endl;
+                cout << "Correct answer: " << answer << endl;
+                cout << endl << endl;
+            }
+            continue;
             
         }
 
