@@ -61,7 +61,7 @@ int main(){
                 wrong++; 
             }
         }
-
+        }
         //Multiplication
         else if (choice == 3){
             //Generate two numbers
